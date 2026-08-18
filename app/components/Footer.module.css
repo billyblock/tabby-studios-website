@@ -1,0 +1,71 @@
+.footer {
+  margin-top: auto;
+  background: var(--ink);
+  color: var(--text-on-dark);
+}
+
+.inner {
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  border-bottom: 1px solid var(--rule-on-dark);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.tagline {
+  margin-top: 0.3rem;
+  font-size: 0.92rem;
+  color: var(--text-soft-on-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.grid :global(.kicker) {
+  color: var(--marmalade);
+}
+
+.grid p {
+  margin: 0.2rem 0 0;
+  font-size: 0.92rem;
+  color: var(--text-soft-on-dark);
+}
+
+.grid a:hover {
+  color: var(--marmalade);
+}
+
+.note {
+  font-size: 0.78rem;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.copy {
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  color: var(--text-soft-on-dark);
+}
