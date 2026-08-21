@@ -27,7 +27,7 @@ export default function MobileNav({ links }) {
               {link.label}
             </a>
           ))}
-          <a href="mailto:hello@tabbystudios.com" onClick={() => setOpen(false)}>
+          <a href="/contact" onClick={() => setOpen(false)}>
             Get a Quote
           </a>
         </div>

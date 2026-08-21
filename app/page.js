@@ -43,17 +43,17 @@ const process = [
 const tiers = [
   {
     name: "Static Website",
-    price: "Starting at $499",
+    price: "$699",
     blurb: "Up to 5 pages, mobile responsive, contact form, basic SEO.",
   },
   {
     name: "Business Website",
-    price: "Starting at $999",
+    price: "$1,200–$2,500",
     blurb: "6–15 pages, custom layouts, expanded SEO, testimonials & FAQ.",
   },
   {
     name: "Custom Web Application",
-    price: "Custom Quote",
+    price: "Contact for a quote",
     blurb: "Logins, bookings, payments, dashboards — scoped and quoted individually.",
   },
 ];
@@ -74,9 +74,9 @@ export default function Home() {
               reach.
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.primaryButton} href="mailto:hello@tabbystudios.com">
+              <Link className={styles.primaryButton} href="/contact">
                 Get a Quote
-              </a>
+              </Link>
               <Link className={styles.textLink} href="/pricing">
                 See pricing
               </Link>
@@ -125,7 +125,13 @@ export default function Home() {
       <section id="about" className={styles.about}>
         <div className={`wrapper ${styles.splitLayout}`}>
           <div className={styles.logoPanel}>
-            <Image src="/logo.png" alt="Tabby Studios logo" width={340} height={340} className={styles.logoImage} />
+            <Image
+              src="/logo.png"
+              alt="Tabby Studios logo"
+              fill
+              sizes="(max-width: 900px) 80vw, 40vw"
+              className={styles.logoImage}
+            />
           </div>
           <div className={styles.copyPanel}>
             <span className="kicker">About Tabby Studios</span>
@@ -203,6 +209,10 @@ export default function Home() {
           <div className={`${styles.sectionHeading} ${styles.centered}`}>
             <span className="kicker">Pricing</span>
             <h2>Every business is different. Your website should be priced that way too.</h2>
+            <p className={styles.sectionIntro}>
+              Fixed, named prices for Tier 1 &amp; 2 — no ranges, no guessing, no call required to
+              buy.
+            </p>
           </div>
 
           <div className={styles.tierGrid}>
@@ -229,9 +239,9 @@ export default function Home() {
             <span className={`kicker ${styles.kickerLight}`}>Ready when you are</span>
             <h2>Ready for a website that works as hard as you do?</h2>
           </div>
-          <a className={styles.primaryButtonLight} href="mailto:hello@tabbystudios.com">
+          <Link className={styles.primaryButtonLight} href="/contact">
             Get a Quote
-          </a>
+          </Link>
         </div>
       </section>
     </main>

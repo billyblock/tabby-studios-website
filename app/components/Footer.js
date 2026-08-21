@@ -26,15 +26,20 @@ export default function Footer() {
           <div>
             <span className="kicker">Contact</span>
             <p>
-              <a href="mailto:hello@tabbystudios.com">hello@tabbystudios.com</a>
+              <a href="mailto:tabbystudiosmqt@gmail.com">tabbystudiosmqt@gmail.com</a>
             </p>
-            <p className={styles.note}>(placeholder &mdash; update once live)</p>
+            <p>
+              <Link href="/contact">Get a Quote</Link>
+            </p>
           </div>
 
           <div>
             <span className="kicker">Explore</span>
             <p>
               <Link href="/pricing">Pricing</Link>
+            </p>
+            <p>
+              <Link href="/faq">FAQ</Link>
             </p>
             <p>
               <Link href="/#services">Services</Link>

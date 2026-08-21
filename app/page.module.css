@@ -246,6 +246,11 @@
   margin-right: auto;
 }
 
+.sectionIntro {
+  margin: 1rem 0 0;
+  color: var(--text-soft);
+}
+
 /* ---------- About ---------- */
 .splitLayout {
   display: grid;
@@ -255,18 +260,16 @@
 }
 
 .logoPanel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   height: 420px;
   border-radius: 28px;
+  overflow: hidden;
   background: radial-gradient(circle at 50% 45%, var(--cream) 0%, var(--cream-deep) 100%);
   box-shadow: 0 24px 50px var(--shadow);
 }
 
 .logoImage {
-  width: 62%;
-  height: auto;
+  object-fit: cover;
 }
 
 .copyPanel {

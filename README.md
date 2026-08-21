@@ -27,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it.
 
 Copy is based on the `Tabby Studios Brand Identity` and `Pricing Strategy & Website Copy` reference docs (voice, positioning statement, color palette, tier pricing, add-ons, and the Website Care Plan). Fonts are Fraunces (headings) and Work Sans (body), per the typography direction in the brand doc.
 
-**Contact info is a placeholder.** `hello@tabbystudios.com` is used throughout as the mailto CTA — swap it for the real business email/phone once set up, in `app/components/Header.js`, `app/components/MobileNav.js`, `app/components/Footer.js`, `app/page.js`, and `app/pricing/page.js`.
+**Contact.** `tabbystudiosmqt@gmail.com` is the live business email, used in the footer and as the fallback link on `/contact`. "Get a Quote" buttons across the site link to `/contact`, a quote-request form (`app/contact/ContactForm.js`) that composes a mailto to that address on submit rather than posting to a backend.
 
 ## To customize
 

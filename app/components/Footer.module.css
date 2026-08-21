@@ -58,12 +58,6 @@
   color: var(--marmalade);
 }
 
-.note {
-  font-size: 0.78rem;
-  font-style: italic;
-  opacity: 0.7;
-}
-
 .copy {
   margin-top: 3rem;
   font-size: 0.75rem;

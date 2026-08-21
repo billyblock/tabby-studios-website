@@ -11,7 +11,7 @@ const links = [
   { href: "/#services", label: "Services" },
   { href: "/#process", label: "Process" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Header() {
@@ -39,7 +39,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <a href="mailto:hello@tabbystudios.com" className={styles.cta}>
+        <a href="/contact" className={styles.cta}>
           Get a Quote
         </a>
 

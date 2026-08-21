@@ -31,7 +31,14 @@ export const metadata = {
     title: "Tabby Studios | Web Design in Marquette, Michigan",
     description:
       "Mobile-friendly, SEO-ready websites for local businesses. Clean design, honest scoped pricing.",
-    images: ["/logo.png"],
+    images: [
+      {
+        url: "/tabbystudios-fullbackground.png",
+        width: 1672,
+        height: 941,
+        alt: "Tabby Studios",
+      },
+    ],
   },
 };
 
