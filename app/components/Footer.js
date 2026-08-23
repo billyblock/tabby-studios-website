@@ -1,40 +1,36 @@
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import Wordmark from "./Wordmark";
 
 export default function Footer() {
   return (
     <footer id="contact" className={styles.footer}>
       <div className={`wrapper ${styles.inner}`}>
         <div className={styles.top}>
-          <Image className={styles.logo} src="/logo.png" alt="Tabby Studios logo" width={88} height={88} />
-          <div>
-            <p className={styles.brand}>Tabby Studios</p>
-            <p className={styles.tagline}>
-              Mobile-friendly, SEO-ready websites for Marquette businesses.
-            </p>
-          </div>
+          <Wordmark size="md" onDark />
+          <p className={styles.tagline}>
+            Mobile-friendly, SEO-ready websites for Marquette businesses.
+          </p>
         </div>
 
         <div className={styles.grid}>
           <div>
-            <span className="kicker">Based In</span>
-            <p>Marquette, Michigan</p>
+            <h3>Based in Marquette</h3>
             <p>Serving the Upper Peninsula</p>
           </div>
 
           <div>
-            <span className="kicker">Contact</span>
+            <h3>Contact</h3>
             <p>
               <a href="mailto:tabbystudiosmqt@gmail.com">tabbystudiosmqt@gmail.com</a>
             </p>
             <p>
-              <Link href="/contact">Get a Quote</Link>
+              <Link href="/contact">Get a quote</Link>
             </p>
           </div>
 
           <div>
-            <span className="kicker">Explore</span>
+            <h3>Explore</h3>
             <p>
               <Link href="/pricing">Pricing</Link>
             </p>

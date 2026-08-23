@@ -27,14 +27,7 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
   flex-shrink: 0;
-}
-
-.brand img {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
 }
 
 .nav {
@@ -64,15 +57,19 @@
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--white);
-  background: var(--clay);
-  border-radius: 999px;
+  color: var(--ink);
+  background: var(--marmalade);
+  border-radius: var(--radius-btn);
   padding: 0.6rem 1.2rem;
-  transition: transform 0.2s var(--ease);
+  transition: background-color 0.2s var(--ease), transform 0.15s var(--ease);
 }
 
 .cta:hover {
-  transform: translateY(-1px);
+  background: var(--marmalade-deep);
+}
+
+.cta:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 760px) {

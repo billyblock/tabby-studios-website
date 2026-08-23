@@ -12,28 +12,14 @@
 .top {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   border-bottom: 1px solid var(--rule-on-dark);
   padding-bottom: 2rem;
   margin-bottom: 2rem;
 }
 
-.logo {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.brand {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--white);
-}
-
 .tagline {
-  margin-top: 0.3rem;
   font-size: 0.92rem;
   color: var(--text-soft-on-dark);
 }
@@ -44,8 +30,13 @@
   gap: 2rem;
 }
 
-.grid :global(.kicker) {
-  color: var(--marmalade);
+.grid h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--white);
 }
 
 .grid p {

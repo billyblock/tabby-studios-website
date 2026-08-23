@@ -3,7 +3,7 @@ import styles from "../contact.module.css";
 
 export const metadata = {
   title: "Thanks! | Tabby Studios",
-  description: "Your quote request was sent — we'll follow up by email shortly.",
+  description: "Your quote request was sent. We'll follow up by email shortly.",
 };
 
 export default function ThankYou() {
@@ -11,8 +11,8 @@ export default function ThankYou() {
     <main>
       <section className={styles.hero}>
         <div className={`wrapper ${styles.heroInner}`}>
-          <span className="kicker">Thank You</span>
-          <h1 className={styles.heroTitle}>Got it — thanks for reaching out.</h1>
+          <span className={styles.heroAccent} aria-hidden="true" />
+          <h1 className={styles.heroTitle}>Got it, thanks for reaching out.</h1>
           <p className={styles.heroSubtitle}>
             Your message is on its way to our inbox. We&apos;ll follow up by email, usually
             within 1 business day.

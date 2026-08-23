@@ -6,14 +6,14 @@ const CONTACT_EMAIL = "tabbystudiosmqt@gmail.com";
 export const metadata = {
   title: "Get a Quote | Tabby Studios",
   description:
-    "Tell us a bit about your business and what you need — it goes straight to our inbox. Or email tabbystudiosmqt@gmail.com directly.",
+    "Tell us a bit about your business and what you need. It goes straight to our inbox. Or email tabbystudiosmqt@gmail.com directly.",
 };
 
 const packageOptions = [
   { key: "", label: "Not sure yet" },
-  { key: "tier1", label: "Tier 1 — Static Website ($699)" },
-  { key: "tier2", label: "Tier 2 — Business Website ($1,200–$2,500)" },
-  { key: "tier3", label: "Tier 3 — Custom Web Application (quote)" },
+  { key: "tier1", label: "Tier 1: Static Website ($699)" },
+  { key: "tier2", label: "Tier 2: Business Website ($1,200–$2,500)" },
+  { key: "tier3", label: "Tier 3: Custom Web Application (quote)" },
   { key: "careplan", label: "Just a Care Plan or add-on" },
 ];
 
@@ -33,10 +33,10 @@ export default async function Contact({ searchParams }) {
     <main>
       <section className={styles.hero}>
         <div className={`wrapper ${styles.heroInner}`}>
-          <span className="kicker">Get a Quote</span>
+          <span className={styles.heroAccent} aria-hidden="true" />
           <h1 className={styles.heroTitle}>Tell us about your business.</h1>
           <p className={styles.heroSubtitle}>
-            Fill this out and hit send — it goes straight to our inbox, no email app required.
+            Fill this out and hit send. It goes straight to our inbox, no email app required.
             Prefer to skip the form? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{" "}
             directly.
           </p>
@@ -50,7 +50,7 @@ export default async function Contact({ searchParams }) {
             action={`https://formsubmit.co/${CONTACT_EMAIL}`}
             method="POST"
           >
-            <input type="hidden" name="_subject" value="New Quote Request — Tabby Studios" />
+            <input type="hidden" name="_subject" value="New Quote Request: Tabby Studios" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value={redirectUrl} />
@@ -66,12 +66,12 @@ export default async function Contact({ searchParams }) {
             <div className={styles.grid}>
               <div className={styles.field}>
                 <label htmlFor="name">Name</label>
-                <input id="name" name="Name" type="text" required placeholder="Jane Doe" />
+                <input id="name" name="Name" type="text" required placeholder="Maria Koski" />
               </div>
 
               <div className={styles.field}>
                 <label htmlFor="business">Business name</label>
-                <input id="business" name="Business" type="text" placeholder="Doe's Diner" />
+                <input id="business" name="Business" type="text" placeholder="Northland Coffee Co." />
               </div>
 
               <div className={styles.field}>
@@ -81,7 +81,7 @@ export default async function Contact({ searchParams }) {
                   name="email"
                   type="email"
                   required
-                  placeholder="jane@example.com"
+                  placeholder="maria@northlandcoffee.com"
                 />
               </div>
 
@@ -118,7 +118,7 @@ export default async function Contact({ searchParams }) {
                 Send to Tabby Studios
               </button>
               <p className={styles.fallback}>
-                This sends straight to our inbox — no email app required. Prefer to email
+                This sends straight to our inbox, no email app required. Prefer to email
                 directly? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               </p>
             </div>

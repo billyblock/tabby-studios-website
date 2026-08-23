@@ -10,7 +10,7 @@ export const metadata = {
 
 const priceStrip = [
   { label: "Static Website", value: "$699", href: "#tier1" },
-  { label: "Business Website", value: "$1,200–$2,500", href: "#tier2" },
+  { label: "Business Website", value: "$1,200–$2,500", href: "#tier2", featured: true },
   { label: "Custom Web App", value: "Get a quote", href: "#tier3" },
   { label: "Care Plan", value: "from $30/mo", href: "#care-plans" },
 ];
@@ -18,9 +18,9 @@ const priceStrip = [
 const tiers = [
   {
     id: "tier1",
-    name: "Tier 1 — Static Website",
+    name: "Tier 1: Static Website",
     price: "$699",
-    blurb: "A solid, credible online presence — no logins, no database, nothing dynamic.",
+    blurb: "A solid, credible online presence. No logins, no database, nothing dynamic to break.",
     highlights: ["Up to 5 pages", "Contact form & Google Maps", "Basic SEO built in", "Live in 10 business days"],
     note: "Payment plan available: $199 down + $49/mo × 12",
     features: [
@@ -32,16 +32,16 @@ const tiers = [
       "Fast-loading, optimized images",
       "Photo gallery",
       "Social media links",
-      "Care Plan — 1st month included, then $30/mo",
+      "Care Plan (1st month included, then $30/mo)",
       "Guaranteed 10 business day turnaround",
     ],
-    cta: { label: "Get Started — $699", href: "/contact?package=tier1" },
+    cta: { label: "Get Started ($699)", href: "/contact?package=tier1" },
   },
   {
     id: "tier2",
-    name: "Tier 2 — Business Website",
+    name: "Tier 2: Business Website",
     price: "$1,200–$2,500",
-    blurb: "More pages, more polish — for businesses with a bigger story to tell.",
+    blurb: "More pages and more polish, for businesses with a bigger story to tell.",
     highlights: ["6–15 pages, custom layouts", "Multiple forms & service pages", "Expanded SEO", "Everything in Tier 1"],
     features: [
       "6–15 pages",
@@ -52,16 +52,16 @@ const tiers = [
       "Testimonials & FAQ sections",
       "Expanded SEO (schema, keyword targeting, internal linking)",
       "Everything in Tier 1",
-      "Care Plan — 1st month included, then $50/mo",
+      "Care Plan (1st month included, then $50/mo)",
     ],
     featured: true,
     cta: { label: "Get Started", href: "/contact?package=tier2" },
   },
   {
     id: "tier3",
-    name: "Tier 3 — Custom Web Application",
+    name: "Tier 3: Custom Web Application",
     price: "Starting at $2,000",
-    blurb: "Logins, bookings, dashboards, payments — scoped and quoted for what you actually need.",
+    blurb: "Logins, bookings, dashboards, payments: scoped and quoted for what you actually need.",
     highlights: ["Logins & customer portals", "Bookings tied to inventory", "Dashboards & payment processing", "Quoted to fit your project"],
     features: [
       "Login & customer portals",
@@ -71,7 +71,7 @@ const tiers = [
       "Memberships & order management",
       "Payment processing",
       "API integrations",
-      "Custom functionality — quote required",
+      "Custom functionality (quote required)",
     ],
     cta: { label: "Book a Discovery Call", href: "/contact?package=tier3", outline: true },
   },
@@ -91,7 +91,7 @@ const basePlans = [
 ];
 
 const supportPlans = [
-  { name: "Tier 3 Software Support Retainer", detail: "Monitoring, minor fixes, patches — up to 2 hrs/mo", price: "$100/mo" },
+  { name: "Tier 3 Software Support Retainer", detail: "Monitoring, minor fixes, patches (up to 2 hrs/mo)", price: "$100/mo" },
   { name: "Tier 3 Priority Support", detail: "Up to 5 hrs/mo, faster response", price: "$200/mo" },
   { name: "Support overage", detail: "Past included hours", price: "$75/hr" },
 ];
@@ -111,20 +111,20 @@ const oneTimeAddOns = [
 ];
 
 const recurringAddOns = [
-  { name: "Starter SEO retainer (2 posts/mo, basic monthly report)", price: "$250/mo" },
-  { name: "Growth SEO retainer (4 posts/mo, backlink outreach, full report)", price: "$450/mo" },
+  { name: "Starter SEO retainer (2 blog posts/mo, basic monthly report)", price: "$250/mo" },
+  { name: "Growth SEO retainer (4 blog posts/mo, backlink outreach, full report)", price: "$450/mo" },
   { name: "Expanded content updates (weekly edits vs. plan default)", price: "$75/mo" },
 ];
 
 const buySteps = [
   {
     step: "Pick a tier",
-    body: "Tier 1 and Tier 2 are fixed price — no call required. Add any à la carte extras you want, then reach out and we'll get the intake started.",
+    body: "Tier 1 and Tier 2 are fixed price, so no call is required. Add any à la carte extras you want, then reach out and we'll get the intake started.",
     cta: { label: "See Tier 1 & 2", href: "#tier1" },
   },
   {
     step: "Send over the basics",
-    body: "A short form gets us your business name, brand colors, photos, copy, and must-have pages — that's all it takes to kick off the build.",
+    body: "A short form gets us your business name, brand colors, photos, copy, and must-have pages. That's all it takes to kick off the build.",
     cta: { label: "Get a Quote", href: "/contact" },
   },
   {
@@ -139,19 +139,23 @@ export default function Pricing() {
     <main>
       <section className={styles.hero}>
         <div className={`wrapper ${styles.heroInner}`}>
-          <span className="kicker">Pricing</span>
+          <span className={styles.heroAccent} aria-hidden="true" />
           <h1 className={styles.heroTitle}>
             Every business is different. Your website should be priced that way too.
           </h1>
           <p className={styles.heroSubtitle}>
             But you should never have to guess what something costs. Tier 1 and Tier 2 are fixed,
-            named prices — pick a package and get started, no call required. Anything genuinely
-            custom gets a quote instead of a guess.
+            named prices, so you can pick a package and get started without a call. Anything
+            genuinely custom gets a quote instead of a guess.
           </p>
 
           <div className={styles.priceStrip}>
             {priceStrip.map((item) => (
-              <a className={styles.priceStripItem} href={item.href} key={item.label}>
+              <a
+                className={`${styles.priceStripItem} ${item.featured ? styles.priceStripItemFeatured : ""}`}
+                href={item.href}
+                key={item.label}
+              >
                 <span className={styles.priceStripLabel}>{item.label}</span>
                 <span className={styles.priceStripValue}>{item.value}</span>
               </a>
@@ -162,8 +166,7 @@ export default function Pricing() {
 
       <section className={styles.tiers}>
         <div className="wrapper">
-          <div className={`${styles.sectionHeading} ${styles.centered}`}>
-            <span className="kicker">The Three Tiers</span>
+          <div className={styles.sectionHeading}>
             <h2>Pick the tier that fits your business.</h2>
           </div>
 
@@ -218,13 +221,12 @@ export default function Pricing() {
 
       <section id="care-plans" className={`${styles.carePlan} ${styles.muted}`}>
         <div className="wrapper">
-          <div className={`${styles.sectionHeading} ${styles.centered}`}>
-            <span className="kicker">Care Plans</span>
+          <div className={styles.sectionHeading}>
             <h2>Peace of mind, not just hosting.</h2>
             <p className={styles.sectionIntro}>
-              You focus on running the business — we&apos;ll make sure the website keeps working
+              You focus on running the business; we&apos;ll make sure the website keeps working
               and stays current. Every Tier 1 or Tier 2 site includes a free first month, then it
-              continues at <strong>$30/mo</strong> (Tier 1) or <strong>$50/mo</strong> (Tier 2) —
+              continues at <strong>$30/mo</strong> (Tier 1) or <strong>$50/mo</strong> (Tier 2):
               hosting, backups, security updates, monitoring, and a bit of content-edit time every
               month.
             </p>
@@ -255,8 +257,8 @@ export default function Pricing() {
                 <h4>Already have a Tier 3 build?</h4>
                 <p>
                   A broken booking system or ordering flow is an operational emergency, not a
-                  content edit — so it&apos;s a separate support retainer, priced and supported
-                  like one.
+                  content edit. It&apos;s handled as a separate support retainer, priced
+                  accordingly.
                 </p>
                 <div className={styles.supportList}>
                   {supportPlans.map((plan) => (
@@ -277,13 +279,12 @@ export default function Pricing() {
 
       <section className={styles.addOns}>
         <div className="wrapper">
-          <div className={`${styles.sectionHeading} ${styles.centered}`}>
-            <span className="kicker">Add-Ons</span>
-            <h2>Build up from a base tier — à la carte.</h2>
+          <div className={styles.sectionHeading}>
+            <h2>Build up from a base tier, à la carte.</h2>
             <p className={styles.sectionIntro}>
-              Every add-on below is a named, fixed price — no ranges. Need something bigger, like
-              a larger store or booking logic tied to inventory? That&apos;s Tier 3 territory —
-              let&apos;s scope it together instead of forcing it into a number that doesn&apos;t
+              Every add-on below is a named, fixed price, no ranges. Need something bigger, like a
+              larger store or booking logic tied to inventory? That&apos;s Tier 3 territory, and
+              we&apos;d rather scope it together than force it into a number that doesn&apos;t
               fit.
             </p>
           </div>
@@ -309,6 +310,10 @@ export default function Pricing() {
           </div>
 
           <h3 className={`${styles.tableTitle} ${styles.tableTitleSpaced}`}>Recurring Add-Ons</h3>
+          <p className={styles.tableNote}>
+            The SEO retainers publish to your site&apos;s blog. If you don&apos;t have one yet,
+            add Basic blog or Full CMS setup above first.
+          </p>
           <div className={styles.tableWrap}>
             <table className={styles.table}>
               <thead>
@@ -332,20 +337,21 @@ export default function Pricing() {
 
       <section className={`${styles.buyProcess} ${styles.muted}`}>
         <div className="wrapper">
-          <div className={`${styles.sectionHeading} ${styles.centered}`}>
-            <span className="kicker">Getting Started</span>
+          <div className={styles.sectionHeading}>
             <h2>Three steps, no surprises.</h2>
           </div>
 
-          <div className={styles.buyGrid}>
+          <div className={styles.buyList}>
             {buySteps.map((item, index) => (
-              <div className={styles.buyCard} key={item.step}>
-                <div className={styles.processNumber}>{String(index + 1).padStart(2, "0")}</div>
-                <h3>{item.step}</h3>
-                <p>{item.body}</p>
-                <Link className={styles.buyCardLink} href={item.cta.href}>
-                  {item.cta.label} &rarr;
-                </Link>
+              <div className={styles.buyRow} key={item.step}>
+                <span className={styles.buyIndex}>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{item.step}</h3>
+                  <p>{item.body}</p>
+                  <Link className={styles.buyCardLink} href={item.cta.href}>
+                    {item.cta.label} &rarr;
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -355,7 +361,6 @@ export default function Pricing() {
       <section className={styles.ctaBand}>
         <div className={`wrapper ${styles.ctaInner}`}>
           <div>
-            <span className={`kicker ${styles.kickerLight}`}>Not sure what you need?</span>
             <h2>Tier 1 &amp; 2 don&apos;t need a call. Tier 3 starts with one.</h2>
             <p className={styles.ctaSubtext}>
               Prefer email? Reach us directly at{" "}

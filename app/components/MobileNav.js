@@ -27,7 +27,7 @@ export default function MobileNav({ links }) {
               {link.label}
             </a>
           ))}
-          <a href="/contact" onClick={() => setOpen(false)}>
+          <a className={styles.ctaLink} href="/contact" onClick={() => setOpen(false)}>
             Get a Quote
           </a>
         </div>

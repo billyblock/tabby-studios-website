@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import MobileNav from "./MobileNav";
+import Wordmark from "./Wordmark";
 
 const links = [
   { href: "/#about", label: "About" },
@@ -28,7 +28,7 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`wrapper ${styles.inner}`}>
         <Link href="/" className={styles.brand} aria-label="Tabby Studios home">
-          <Image src="/logo.png" alt="Tabby Studios logo" width={72} height={72} priority />
+          <Wordmark size="sm" />
         </Link>
 
         <nav className={styles.nav} aria-label="Main navigation">

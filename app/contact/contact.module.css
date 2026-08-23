@@ -1,12 +1,21 @@
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(160deg, var(--cream) 0%, var(--paper) 60%);
+  background: var(--paper);
   padding-top: 9.5rem;
   padding-bottom: 3rem;
 }
 
 .heroInner {
   max-width: var(--max-width-narrow);
+}
+
+.heroAccent {
+  display: block;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--marmalade);
+  margin-bottom: 1.5rem;
 }
 
 .heroTitle {
@@ -38,9 +47,8 @@
   margin: 0 auto;
   background: var(--white);
   border: 1px solid var(--rule);
-  border-radius: 24px;
+  border-radius: var(--radius-lg, 20px);
   padding: 2.5rem 2rem;
-  box-shadow: 0 12px 24px rgba(43, 38, 32, 0.05);
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
@@ -72,7 +80,7 @@
   color: var(--ink);
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 0.75rem 0.9rem;
   transition: border-color 0.2s var(--ease);
 }
@@ -99,23 +107,26 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 0.9rem 1.75rem;
+  min-height: 50px;
+  padding: 0.85rem 1.6rem;
   border: none;
-  border-radius: 999px;
-  background: var(--clay);
-  color: var(--white);
+  border-radius: var(--radius-btn);
+  background: var(--marmalade);
+  color: var(--ink);
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 14px 28px rgba(181, 101, 46, 0.28);
-  transition: transform 0.2s var(--ease);
+  transition: background-color 0.2s var(--ease), transform 0.15s var(--ease);
 }
 
 .submitButton:hover {
-  transform: translateY(-1px);
+  background: var(--marmalade-deep);
+}
+
+.submitButton:active {
+  transform: scale(0.98);
 }
 
 .fallback {
