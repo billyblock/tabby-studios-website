@@ -2,20 +2,20 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Header.module.css";
 import MobileNav from "./MobileNav";
 import Wordmark from "./Wordmark";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/#services", label: "Services" },
-  { href: "/#process", label: "Process" },
+  { href: "/about", label: "About" },
   { href: "/pricing", label: "Pricing" },
   { href: "/faq", label: "FAQ" },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -33,15 +33,20 @@ export default function Header() {
 
         <nav className={styles.nav} aria-label="Main navigation">
           {links.map((link) => (
-            <a key={link.href} href={link.href}>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={pathname === link.href ? styles.navActive : ""}
+              aria-current={pathname === link.href ? "page" : undefined}
+            >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a href="/contact" className={styles.cta}>
-          Get a Quote
-        </a>
+        <Link href="/start" className={styles.cta}>
+          Get Started
+        </Link>
 
         <MobileNav links={links} />
       </div>

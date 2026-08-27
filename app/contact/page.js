@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import Link from "next/link";
 import styles from "./contact.module.css";
 
 const CONTACT_EMAIL = "tabbystudiosmqt@gmail.com";
@@ -12,7 +13,7 @@ export const metadata = {
 const packageOptions = [
   { key: "", label: "Not sure yet" },
   { key: "tier1", label: "Tier 1: Static Website ($699)" },
-  { key: "tier2", label: "Tier 2: Business Website ($1,200–$2,500)" },
+  { key: "tier2", label: "Tier 2: Business Website ($1,499)" },
   { key: "tier3", label: "Tier 3: Custom Web Application (quote)" },
   { key: "careplan", label: "Just a Care Plan or add-on" },
 ];
@@ -32,14 +33,21 @@ export default async function Contact({ searchParams }) {
   return (
     <main>
       <section className={styles.hero}>
-        <div className={`wrapper ${styles.heroInner}`}>
-          <span className={styles.heroAccent} aria-hidden="true" />
-          <h1 className={styles.heroTitle}>Tell us about your business.</h1>
-          <p className={styles.heroSubtitle}>
-            Fill this out and hit send. It goes straight to our inbox, no email app required.
-            Prefer to skip the form? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{" "}
-            directly.
-          </p>
+        <div className={styles.heroBlob} aria-hidden="true" />
+        <div className="wrapper">
+          <div className={styles.heroInner}>
+            <span className={styles.heroAccent} aria-hidden="true" />
+            <h1 className={styles.heroTitle}>Tell us about your business.</h1>
+            <p className={styles.heroSubtitle}>
+              Fill this out and hit send. It goes straight to our inbox, no email app required.
+              Prefer to skip the form? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{" "}
+              directly.
+            </p>
+            <p className={styles.heroNote}>
+              Already know you want Tier 1 or Tier 2?{" "}
+              <Link href="/start">Skip the wait and start your project</Link>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -118,8 +126,8 @@ export default async function Contact({ searchParams }) {
                 Send to Tabby Studios
               </button>
               <p className={styles.fallback}>
-                This sends straight to our inbox, no email app required. Prefer to email
-                directly? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                Prefer email? Reach us directly at{" "}
+                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               </p>
             </div>
           </form>

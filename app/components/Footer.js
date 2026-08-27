@@ -25,25 +25,37 @@ export default function Footer() {
               <a href="mailto:tabbystudiosmqt@gmail.com">tabbystudiosmqt@gmail.com</a>
             </p>
             <p>
-              <Link href="/contact">Get a quote</Link>
+              <Link href="/start">Start your project</Link>
+            </p>
+            <p>
+              <Link href="/contact">Contact us</Link>
             </p>
           </div>
 
           <div>
             <h3>Explore</h3>
             <p>
+              <Link href="/">Home</Link>
+            </p>
+            <p>
+              <Link href="/about">About</Link>
+            </p>
+            <p>
               <Link href="/pricing">Pricing</Link>
             </p>
             <p>
               <Link href="/faq">FAQ</Link>
             </p>
-            <p>
-              <Link href="/#services">Services</Link>
-            </p>
           </div>
         </div>
 
-        <p className={styles.copy}>&copy; {new Date().getFullYear()} Tabby Studios. All rights reserved.</p>
+        <div className={styles.bottom}>
+          <p className={styles.copy}>&copy; {new Date().getFullYear()} Tabby Studios. All rights reserved.</p>
+          <p className={styles.legalLinks}>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+          </p>
+        </div>
       </div>
     </footer>
   );

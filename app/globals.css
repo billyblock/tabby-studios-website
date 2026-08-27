@@ -27,6 +27,8 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --radius-btn: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
 }
 
 html {
@@ -105,6 +107,47 @@ body::before {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+/* Scroll-reveal utility (see components/Reveal.js): opt-in, used only for
+   sequence-carrying lists (the pricing page's numbered steps, each FAQ
+   category's question list) so the stagger mirrors the real reading order.
+   Content stays visible by default and only primes to hidden once client JS
+   has actually mounted, so a failed or blocked script never hides it. */
+.revealGroup.revealPrimed > *,
+.revealGroup.revealVisible > * {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.revealGroup.revealVisible > * {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.revealGroup.revealVisible > *:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.revealGroup.revealVisible > *:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.revealGroup.revealVisible > *:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.revealGroup.revealVisible > *:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+.revealGroup.revealVisible > *:nth-child(5) {
+  transition-delay: 360ms;
+}
+
+.revealGroup.revealVisible > *:nth-child(6) {
+  transition-delay: 450ms;
 }
 
 @media (prefers-reduced-motion: reduce) {

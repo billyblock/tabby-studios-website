@@ -1,0 +1,116 @@
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  background: var(--paper);
+  padding-top: 9.5rem;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+.heroBlob {
+  position: absolute;
+  top: -6rem;
+  right: -8rem;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+  background: var(--marmalade-soft);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: blobDrift 22s ease-in-out infinite;
+}
+
+@keyframes blobDrift {
+  0%,
+  100% {
+    border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+  }
+  50% {
+    border-radius: 58% 42% 45% 55% / 55% 60% 40% 45%;
+  }
+}
+
+.heroInner {
+  position: relative;
+  max-width: var(--max-width-narrow);
+}
+
+.heroAccent {
+  display: block;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--marmalade);
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  margin: 1rem 0 1.25rem;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.heroSubtitle {
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+.updated {
+  margin: 1.25rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--warm-gray);
+}
+
+/* ---------- Prose ---------- */
+.content {
+  padding: 1rem 0 6rem;
+}
+
+.prose {
+  max-width: var(--max-width-narrow);
+}
+
+.prose h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+  color: var(--text-soft);
+}
+
+.prose ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  color: var(--text-soft);
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: var(--clay);
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+}
+
+.prose strong {
+  color: var(--ink);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 620px) {
+  .hero {
+    padding-top: 7rem;
+  }
+}

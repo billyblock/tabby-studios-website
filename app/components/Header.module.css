@@ -43,11 +43,27 @@
 }
 
 .nav a {
+  position: relative;
   transition: color 0.2s var(--ease);
 }
 
 .nav a:hover {
   color: var(--clay);
+}
+
+.nav a.navActive {
+  color: var(--clay);
+}
+
+.nav a.navActive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--marmalade);
 }
 
 .cta {

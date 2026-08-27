@@ -1,12 +1,40 @@
 /* ---------- Hero ---------- */
 .hero {
+  position: relative;
   background: var(--paper);
   padding-top: 9.5rem;
   padding-bottom: 4rem;
+  overflow: hidden;
+}
+
+.heroBlob {
+  position: absolute;
+  top: -6rem;
+  right: -8rem;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+  background: var(--marmalade-soft);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: blobDrift 22s ease-in-out infinite;
+}
+
+@keyframes blobDrift {
+  0%,
+  100% {
+    border-radius: 42% 58% 65% 35% / 45% 45% 55% 55%;
+  }
+  50% {
+    border-radius: 58% 42% 45% 55% / 55% 60% 40% 45%;
+  }
 }
 
 .heroInner {
+  position: relative;
   max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  text-align: center;
 }
 
 .heroAccent {
@@ -15,7 +43,7 @@
   height: 4px;
   border-radius: 2px;
   background: var(--marmalade);
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem;
 }
 
 .heroTitle {
@@ -155,6 +183,17 @@
   border-radius: var(--radius-md, 12px);
   padding: 2rem 1.6rem;
   scroll-margin-top: 6rem;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease-out);
+}
+
+.tierCard:hover {
+  border-color: var(--marmalade);
+  box-shadow: 0 16px 32px var(--shadow);
+  transform: translateY(-4px);
+}
+
+.tierCardFeatured:hover {
+  border-color: var(--ink);
 }
 
 .tierCardFeatured {
@@ -162,24 +201,23 @@
   border-color: var(--ink);
 }
 
-.tierCardFeatured h3 {
+.tierCardFeatured > h3 {
   color: var(--white);
 }
 
-.tierCardFeatured .tierPrice {
+.tierCardFeatured > .tierPrice {
   color: var(--marmalade);
 }
 
-.tierCardFeatured .tierBlurb,
-.tierCardFeatured .tierNote {
+.tierCardFeatured > .tierBlurb {
   color: var(--text-soft-on-dark);
 }
 
-.tierCardFeatured .featureList li {
+.tierCardFeatured > .featureList li {
   color: var(--text-on-dark);
 }
 
-.tierCardFeatured .check {
+.tierCardFeatured > .featureList .check {
   background: var(--white);
 }
 
@@ -208,6 +246,10 @@
   margin: 0 0 1.4rem;
   color: var(--text-soft);
   font-size: 0.95rem;
+}
+
+.tierCard > .featureList {
+  margin-bottom: 1.5rem;
 }
 
 .tierCta {
@@ -546,6 +588,27 @@
   padding-bottom: 2px;
 }
 
+.customPath {
+  max-width: var(--max-width-narrow);
+  margin-top: 2rem;
+  padding: 1.75rem 2rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md, 12px);
+}
+
+.customPath h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.customPath p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
 /* ---------- CTA band ---------- */
 .ctaBand {
   background: var(--ink);
@@ -632,6 +695,16 @@
   .buyRow {
     grid-template-columns: 1fr;
     gap: 0.5rem;
+  }
+
+  .table {
+    min-width: 0;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
   }
 
   .ctaInner {

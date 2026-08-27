@@ -1,16 +1,17 @@
 import Link from "next/link";
 import Modal from "./Modal";
+import Reveal from "../components/Reveal";
 import styles from "./pricing.module.css";
 
 export const metadata = {
   title: "Pricing | Tabby Studios",
   description:
-    "Fixed, transparent pricing for websites built in Marquette, Michigan. Static sites at $699, business sites from $1,200–$2,500, and custom quotes for dynamic web applications.",
+    "Fixed, transparent pricing for websites built in Marquette, Michigan. Static sites at $699, business sites at $1,499, and custom quotes for dynamic web applications.",
 };
 
 const priceStrip = [
   { label: "Static Website", value: "$699", href: "#tier1" },
-  { label: "Business Website", value: "$1,200–$2,500", href: "#tier2", featured: true },
+  { label: "Business Website", value: "$1,499", href: "#tier2", featured: true },
   { label: "Custom Web App", value: "Get a quote", href: "#tier3" },
   { label: "Care Plan", value: "from $30/mo", href: "#care-plans" },
 ];
@@ -35,16 +36,16 @@ const tiers = [
       "Care Plan (1st month included, then $30/mo)",
       "Guaranteed 10 business day turnaround",
     ],
-    cta: { label: "Get Started ($699)", href: "/contact?package=tier1" },
+    cta: { label: "Get Started ($699)", href: "/start?package=tier1" },
   },
   {
     id: "tier2",
     name: "Tier 2: Business Website",
-    price: "$1,200–$2,500",
+    price: "$1,499",
     blurb: "More pages and more polish, for businesses with a bigger story to tell.",
-    highlights: ["6–15 pages, custom layouts", "Multiple forms & service pages", "Expanded SEO", "Everything in Tier 1"],
+    highlights: ["Up to 10 pages, custom layouts", "Multiple forms & service pages", "Expanded SEO", "Everything in Tier 1"],
     features: [
-      "6–15 pages",
+      "Up to 10 pages",
       "Custom page layouts",
       "Multiple forms",
       "Enhanced animations/interactions",
@@ -55,7 +56,7 @@ const tiers = [
       "Care Plan (1st month included, then $50/mo)",
     ],
     featured: true,
-    cta: { label: "Get Started", href: "/contact?package=tier2" },
+    cta: { label: "Get Started ($1,499)", href: "/start?package=tier2" },
   },
   {
     id: "tier3",
@@ -73,7 +74,7 @@ const tiers = [
       "API integrations",
       "Custom functionality (quote required)",
     ],
-    cta: { label: "Book a Discovery Call", href: "/contact?package=tier3", outline: true },
+    cta: { label: "Book a Discovery Call", href: "/contact?package=tier3" },
   },
 ];
 
@@ -93,7 +94,7 @@ const basePlans = [
 const supportPlans = [
   { name: "Tier 3 Software Support Retainer", detail: "Monitoring, minor fixes, patches (up to 2 hrs/mo)", price: "$100/mo" },
   { name: "Tier 3 Priority Support", detail: "Up to 5 hrs/mo, faster response", price: "$200/mo" },
-  { name: "Support overage", detail: "Past included hours", price: "$75/hr" },
+  { name: "Extra support hours", detail: "After your plan's included hours are used up", price: "$75/hr" },
 ];
 
 const oneTimeAddOns = [
@@ -104,16 +105,9 @@ const oneTimeAddOns = [
   { name: "Custom-styled booking flow (matches site design)", price: "$700" },
   { name: "Expanded SEO upgrade (bring Tier 1 up to Tier 2 SEO)", price: "$200" },
   { name: "Logo refresh (touch up existing logo)", price: "$150" },
-  { name: "New logo design", price: "$300" },
   { name: "Google Business Profile setup", price: "$150" },
   { name: "Rush delivery (faster than standard turnaround)", price: "+25% of project total" },
   { name: "Basic online store (up to 10 products, standard checkout)", price: "$1,800" },
-];
-
-const recurringAddOns = [
-  { name: "Starter SEO retainer (2 blog posts/mo, basic monthly report)", price: "$250/mo" },
-  { name: "Growth SEO retainer (4 blog posts/mo, backlink outreach, full report)", price: "$450/mo" },
-  { name: "Expanded content updates (weekly edits vs. plan default)", price: "$75/mo" },
 ];
 
 const buySteps = [
@@ -125,41 +119,43 @@ const buySteps = [
   {
     step: "Send over the basics",
     body: "A short form gets us your business name, brand colors, photos, copy, and must-have pages. That's all it takes to kick off the build.",
-    cta: { label: "Get a Quote", href: "/contact" },
-  },
-  {
-    step: "Something custom?",
-    body: "Tier 3 work always starts with a quick call so we can scope it properly before pricing it.",
-    cta: { label: "Book a Call", href: "/contact?package=tier3" },
+    cta: { label: "Start Your Project", href: "/start" },
   },
 ];
+
+const customPath = {
+  title: "Need something custom instead?",
+  body: "Tier 3 work always starts with a quick call so we can scope it properly before pricing it.",
+  cta: { label: "Book a Call", href: "/contact?package=tier3" },
+};
 
 export default function Pricing() {
   return (
     <main>
       <section className={styles.hero}>
-        <div className={`wrapper ${styles.heroInner}`}>
-          <span className={styles.heroAccent} aria-hidden="true" />
-          <h1 className={styles.heroTitle}>
-            Every business is different. Your website should be priced that way too.
-          </h1>
-          <p className={styles.heroSubtitle}>
-            But you should never have to guess what something costs. Tier 1 and Tier 2 are fixed,
-            named prices, so you can pick a package and get started without a call. Anything
-            genuinely custom gets a quote instead of a guess.
-          </p>
+        <div className={styles.heroBlob} aria-hidden="true" />
+        <div className="wrapper">
+          <div className={styles.heroInner}>
+            <span className={styles.heroAccent} aria-hidden="true" />
+            <h1 className={styles.heroTitle}>See exactly what your website costs.</h1>
+            <p className={styles.heroSubtitle}>
+              You should never have to guess what something costs. Tier 1 and Tier 2 are fixed,
+              named prices, so you can pick a package and get started without a call. Anything
+              genuinely custom gets a quote instead of a guess.
+            </p>
 
-          <div className={styles.priceStrip}>
-            {priceStrip.map((item) => (
-              <a
-                className={`${styles.priceStripItem} ${item.featured ? styles.priceStripItemFeatured : ""}`}
-                href={item.href}
-                key={item.label}
-              >
-                <span className={styles.priceStripLabel}>{item.label}</span>
-                <span className={styles.priceStripValue}>{item.value}</span>
-              </a>
-            ))}
+            <div className={styles.priceStrip}>
+              {priceStrip.map((item) => (
+                <a
+                  className={`${styles.priceStripItem} ${item.featured ? styles.priceStripItemFeatured : ""}`}
+                  href={item.href}
+                  key={item.label}
+                >
+                  <span className={styles.priceStripLabel}>{item.label}</span>
+                  <span className={styles.priceStripValue}>{item.value}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -308,40 +304,16 @@ export default function Pricing() {
               </tbody>
             </table>
           </div>
-
-          <h3 className={`${styles.tableTitle} ${styles.tableTitleSpaced}`}>Recurring Add-Ons</h3>
-          <p className={styles.tableNote}>
-            The SEO retainers publish to your site&apos;s blog. If you don&apos;t have one yet,
-            add Basic blog or Full CMS setup above first.
-          </p>
-          <div className={styles.tableWrap}>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Add-On</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recurringAddOns.map((item) => (
-                  <tr key={item.name}>
-                    <td>{item.name}</td>
-                    <td>{item.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </section>
 
       <section className={`${styles.buyProcess} ${styles.muted}`}>
         <div className="wrapper">
           <div className={styles.sectionHeading}>
-            <h2>Three steps, no surprises.</h2>
+            <h2>Two steps, no surprises.</h2>
           </div>
 
-          <div className={styles.buyList}>
+          <Reveal className={`${styles.buyList} revealGroup`}>
             {buySteps.map((item, index) => (
               <div className={styles.buyRow} key={item.step}>
                 <span className={styles.buyIndex}>{String(index + 1).padStart(2, "0")}</span>
@@ -354,6 +326,14 @@ export default function Pricing() {
                 </div>
               </div>
             ))}
+          </Reveal>
+
+          <div className={styles.customPath}>
+            <h3>{customPath.title}</h3>
+            <p>{customPath.body}</p>
+            <Link className={styles.buyCardLink} href={customPath.cta.href}>
+              {customPath.cta.label} &rarr;
+            </Link>
           </div>
         </div>
       </section>
@@ -361,14 +341,14 @@ export default function Pricing() {
       <section className={styles.ctaBand}>
         <div className={`wrapper ${styles.ctaInner}`}>
           <div>
-            <h2>Tier 1 &amp; 2 don&apos;t need a call. Tier 3 starts with one.</h2>
+            <h2>Ready to get started?</h2>
             <p className={styles.ctaSubtext}>
               Prefer email? Reach us directly at{" "}
               <a href="mailto:tabbystudiosmqt@gmail.com">tabbystudiosmqt@gmail.com</a>
             </p>
           </div>
-          <Link className={styles.primaryButtonLight} href="/contact">
-            Get a Quote
+          <Link className={styles.primaryButtonLight} href="/start">
+            Get Started
           </Link>
         </div>
       </section>

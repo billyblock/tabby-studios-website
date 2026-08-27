@@ -86,6 +86,10 @@
   color: var(--clay);
 }
 
+.panel a.navActive {
+  color: var(--clay);
+}
+
 .panel a.ctaLink,
 .panel a.ctaLink:hover {
   color: var(--ink);

@@ -22,9 +22,10 @@ Named, fixed pricing for Tier 1 ($699) and Tier 2 ($1,200–$2,500) — competit
 
 - Three-tier structure: Tier 1 (static, $699, up to 5 pages, no logins/database), Tier 2 (business, $1,200–$2,500, 6–15 pages, custom layouts), Tier 3 (custom web application, quoted individually, starts at $2,000 — logins, bookings, dashboards, payments).
 - Tier 1 and Tier 2 can be purchased without a call; Tier 3 always starts with a discovery call since scope must be defined before it can be priced.
+- **Self-serve start flow (`/start`)**: the site's primary CTA ("Get Started") for Tier 1/Tier 2. A structured intake — pick the tier, then fixed fields (contact info, domain, must-have pages, brand-asset readiness, copy readiness) — replaces open-ended "tell us about your project" copy for these two tiers, so a client commits and moves straight into the build queue instead of waiting on a reviewed quote. This is the concrete expression of the signature-offer/systemized-process positioning: one repeatable intake, not a case-by-case conversation. `/contact` remains for Tier 3 (always starts with a discovery call), general questions, and Care Plan/add-on inquiries; it links to `/start` for anyone who already knows they want Tier 1 or 2. Both flows post to the same formsubmit.co endpoint (see below) — `/start` is a distinct intake, not a different backend.
 - Every build includes a first month of a Care Plan (hosting, backups, SSL, security updates, uptime monitoring, limited content-edit time), which then continues at $30/mo (Tier 1) or $50/mo (Tier 2). Tier 3 sites carry a separate software support retainer instead.
 - A full menu of named, fixed-price add-ons exists (extra pages, blog, CMS setup, booking widgets, SEO retainers, logo work) for buyers who want to build up from a base tier.
-- The contact form posts to formsubmit.co and redirects to a thank-you page; there is no backend/CMS.
+- Both the `/contact` and `/start` forms post to formsubmit.co and redirect to a confirmation page; there is no backend/CMS and no payment processing — "starting" means submitting the intake, not paying on the site.
 - Built with Next.js (App Router), vanilla CSS Modules — no CSS framework, no component library.
 
 ## Capabilities and Constraints

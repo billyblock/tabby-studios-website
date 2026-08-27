@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Reveal from "../components/Reveal";
+import FaqItem from "./FaqItem";
 import styles from "./faq.module.css";
 
 export const metadata = {
@@ -17,15 +19,15 @@ const categories = [
       },
       {
         q: "What's the difference between Tier 1 and Tier 2?",
-        a: "Tier 2 is everything in Tier 1, built out for businesses with more to say: 6–15 pages instead of 5, custom page layouts, multiple forms, service area pages, testimonials and FAQ sections, enhanced animations, and expanded SEO (schema markup, keyword targeting, internal linking).",
+        a: "Tier 2 is everything in Tier 1, built out for businesses with more to say: up to 10 pages instead of 5, custom page layouts, multiple forms, service area pages, testimonials and FAQ sections, enhanced animations, and expanded SEO (schema markup, keyword targeting, internal linking).",
       },
       {
-        q: "Is $1,200–$2,500 a real range, or will I just get quoted the high end?",
-        a: "It's a real range. Tier 2 pricing depends on how many pages you need (6–15) and how much custom layout work is involved. Once we know your page count and content, you get one fixed number before any work starts, with no surprises after you've said yes.",
+        q: "What if I need more than 10 pages on Tier 2?",
+        a: "Extra pages beyond Tier 2's 10-page cap are $100 each through the Extra Page add-on, so more content doesn't force you into Tier 3. Tier 3 is reserved for projects that need real app functionality, like logins, bookings tied to inventory, dashboards, or payment processing, not just a higher page count.",
       },
       {
         q: "What if my project is bigger than Tier 1 or Tier 2?",
-        a: "That's Tier 3. Anything with a database enters the picture here: logins, customer portals, booking systems tied to inventory, dashboards, memberships, payment processing, or API integrations. These are genuinely different project to project, so they're scoped and quoted individually starting at $2,000 rather than forced into a flat number.",
+        a: "That's Tier 3. Anything with a database enters the picture here: logins, customer portals, booking systems tied to inventory, dashboards, memberships, payment processing, or API integrations. These are genuinely different from project to project, so they're scoped and quoted individually starting at $2,000 rather than forced into a flat number.",
       },
       {
         q: "Do you offer a payment plan?",
@@ -81,17 +83,39 @@ const categories = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: categories.flatMap((category) =>
+    category.questions.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    }))
+  ),
+};
+
 export default function Faq() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className={styles.hero}>
-        <div className={`wrapper ${styles.heroInner}`}>
-          <span className={styles.heroAccent} aria-hidden="true" />
-          <h1 className={styles.heroTitle}>Questions? We&apos;ve got answers.</h1>
-          <p className={styles.heroSubtitle}>
-            The most common questions about pricing, timelines, and Care Plans. Don&apos;t see
-            yours? Just ask.
-          </p>
+        <div className={styles.heroBlob} aria-hidden="true" />
+        <div className="wrapper">
+          <div className={styles.heroInner}>
+            <span className={styles.heroAccent} aria-hidden="true" />
+            <h1 className={styles.heroTitle}>Questions? We&apos;ve got answers.</h1>
+            <p className={styles.heroSubtitle}>
+              The most common questions about pricing, timelines, and Care Plans. Don&apos;t see
+              yours? Just ask.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -100,14 +124,11 @@ export default function Faq() {
           {categories.map((category) => (
             <div className={styles.category} key={category.name}>
               <h2>{category.name}</h2>
-              <div className={styles.accordionList}>
+              <Reveal className={`${styles.accordionList} revealGroup`}>
                 {category.questions.map((item) => (
-                  <details className={styles.accordionItem} key={item.q}>
-                    <summary>{item.q}</summary>
-                    <p>{item.a}</p>
-                  </details>
+                  <FaqItem question={item.q} answer={item.a} key={item.q} />
                 ))}
-              </div>
+              </Reveal>
             </div>
           ))}
         </div>
