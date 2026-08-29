@@ -6,12 +6,12 @@ import styles from "./pricing.module.css";
 export const metadata = {
   title: "Pricing | Tabby Studios",
   description:
-    "Fixed, transparent pricing for websites built in Marquette, Michigan. Static sites at $699, business sites at $1,499, and custom quotes for dynamic web applications.",
+    "Fixed, transparent pricing for websites built in Marquette, Michigan. Static sites at $699, business sites at $1,299, and custom quotes for dynamic web applications.",
 };
 
 const priceStrip = [
   { label: "Static Website", value: "$699", href: "#tier1" },
-  { label: "Business Website", value: "$1,499", href: "#tier2", featured: true },
+  { label: "Business Website", value: "$1,299", href: "#tier2", featured: true },
   { label: "Custom Web App", value: "Get a quote", href: "#tier3" },
   { label: "Care Plan", value: "from $30/mo", href: "#care-plans" },
 ];
@@ -41,7 +41,7 @@ const tiers = [
   {
     id: "tier2",
     name: "Tier 2: Business Website",
-    price: "$1,499",
+    price: "$1,299",
     blurb: "More pages and more polish, for businesses with a bigger story to tell.",
     highlights: ["Up to 10 pages, custom layouts", "Multiple forms & service pages", "Expanded SEO", "Everything in Tier 1"],
     features: [
@@ -56,7 +56,7 @@ const tiers = [
       "Care Plan (1st month included, then $50/mo)",
     ],
     featured: true,
-    cta: { label: "Get Started ($1,499)", href: "/start?package=tier2" },
+    cta: { label: "Get Started ($1,299)", href: "/start?package=tier2" },
   },
   {
     id: "tier3",

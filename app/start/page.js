@@ -20,7 +20,7 @@ const startTiers = [
   {
     key: "tier2",
     name: "Tier 2: Business Website",
-    price: "$1,499",
+    price: "$1,299",
     blurb: "Up to 10 pages, custom layouts.",
   },
 ];

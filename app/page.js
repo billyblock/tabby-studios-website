@@ -17,7 +17,7 @@ const tiers = [
   },
   {
     name: "Business Website",
-    price: "$1,499",
+    price: "$1,299",
     blurb: "Up to 10 pages, custom layouts, expanded SEO, testimonials & FAQ.",
     recommended: true,
     href: "/pricing#tier2",
