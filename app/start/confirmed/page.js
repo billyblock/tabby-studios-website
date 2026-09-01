@@ -10,11 +10,11 @@ export const metadata = {
 const copyByTier = {
   tier1: {
     subtitle:
-      "Your Tier 1 site is officially in motion. We'll email you within 1 business day to confirm the details and lock in your 10-business-day timeline.",
+      "Your Standard site is officially in motion. We'll email you within 1 business day to confirm the details and lock in your 10-business-day timeline.",
   },
   tier2: {
     subtitle:
-      "Your Tier 2 site is officially in motion. We'll email you within 1 business day to confirm scope, page count, and your timeline.",
+      "Your Advanced site is officially in motion. We'll email you within 1 business day to confirm scope, page count, and your timeline.",
   },
 };
 

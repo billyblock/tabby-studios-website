@@ -12,9 +12,9 @@ export const metadata = {
 
 const packageOptions = [
   { key: "", label: "Not sure yet" },
-  { key: "tier1", label: "Tier 1: Static Website ($699)" },
-  { key: "tier2", label: "Tier 2: Business Website ($1,299)" },
-  { key: "tier3", label: "Tier 3: Custom Web Application (quote)" },
+  { key: "tier1", label: "Standard Website ($349)" },
+  { key: "tier2", label: "Advanced Website ($599)" },
+  { key: "tier3", label: "Custom Web Application (quote)" },
   { key: "careplan", label: "Just a Care Plan or add-on" },
 ];
 
@@ -44,7 +44,7 @@ export default async function Contact({ searchParams }) {
               directly.
             </p>
             <p className={styles.heroNote}>
-              Already know you want Tier 1 or Tier 2?{" "}
+              Already know you want Standard or Advanced?{" "}
               <Link href="/start">Skip the wait and start your project</Link>
             </p>
           </div>

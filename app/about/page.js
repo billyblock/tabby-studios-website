@@ -68,8 +68,8 @@ export default function About() {
             <h2>How I work</h2>
             <p>
               Every project goes through one person, start to finish: no account managers, no
-              handoffs, no outsourcing. Pricing is fixed and posted up front, and Tier 1 or Tier 2
-              projects can get started without a call. The full breakdown is on the{" "}
+              handoffs, no outsourcing. Pricing is fixed and posted up front, and Standard or
+              Advanced projects can get started without a call. The full breakdown is on the{" "}
               <Link href="/pricing">Pricing</Link> and <Link href="/faq">FAQ</Link> pages.
             </p>
           </div>

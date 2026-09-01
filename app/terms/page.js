@@ -36,12 +36,12 @@ export default function Terms() {
 
             <h2>Pricing &amp; payment</h2>
             <p>
-              Pricing for Tier 1 and Tier 2 is fixed and published on the{" "}
-              <a href="/pricing">Pricing</a> page. Tier 3 projects are scoped individually and
+              Pricing for Standard and Advanced is fixed and published on the{" "}
+              <a href="/pricing">Pricing</a> page. Custom projects are scoped individually and
               quoted before any work begins. A project&apos;s price is locked in once you&apos;ve
               agreed to it and won&apos;t change after the fact unless you request work outside
-              the original scope. Payment terms (full payment, deposit, or the Tier 1 payment
-              plan) are confirmed in writing before the build starts.
+              the original scope. Payment terms (full payment or deposit) are confirmed in
+              writing before the build starts.
             </p>
 
             <h2>What we need from you</h2>
@@ -71,7 +71,7 @@ export default function Terms() {
             <p>
               Every build includes a first month of Care Plan (hosting, backups, SSL, security
               updates, and uptime monitoring), which then continues on a monthly basis at the rate
-              listed on the <a href="/pricing">Pricing</a> page. Tier 3 sites carry a separate
+              listed on the <a href="/pricing">Pricing</a> page. Custom sites carry a separate
               software support retainer instead. Details on canceling or changing a plan are
               confirmed directly with you when your project starts.
             </p>

@@ -6,68 +6,84 @@ import styles from "./pricing.module.css";
 export const metadata = {
   title: "Pricing | Tabby Studios",
   description:
-    "Fixed, transparent pricing for websites built in Marquette, Michigan. Static sites at $699, business sites at $1,299, and custom quotes for dynamic web applications.",
+    "Fixed, transparent pricing for websites built in Marquette, Michigan. Standard sites at $349, Advanced sites at $599, and custom quotes for dynamic web applications.",
 };
 
 const priceStrip = [
-  { label: "Static Website", value: "$699", href: "#tier1" },
-  { label: "Business Website", value: "$1,299", href: "#tier2", featured: true },
-  { label: "Custom Web App", value: "Get a quote", href: "#tier3" },
+  { label: "Standard", value: "$349", href: "#tier1" },
+  { label: "Advanced", value: "$599", href: "#tier2", featured: true },
+  { label: "Custom", value: "Get a quote", href: "#tier3" },
   { label: "Care Plan", value: "from $30/mo", href: "#care-plans" },
 ];
 
 const tiers = [
   {
     id: "tier1",
-    name: "Tier 1: Static Website",
-    price: "$699",
-    blurb: "A solid, credible online presence. No logins, no database, nothing dynamic to break.",
-    highlights: ["Up to 5 pages", "Contact form & Google Maps", "Basic SEO built in", "Live in 10 business days"],
-    note: "Payment plan available: $199 down + $49/mo × 12",
+    name: "Standard Website",
+    price: "$349",
+    blurb: "Get your business online with a clean, professional site that just works.",
+    highlights: ["Up to 4 pages", "1 contact form", "Basic SEO & analytics", "Live in 10 business days"],
     features: [
-      "Up to 5 pages",
+      "Up to 4 pages",
+      "Professional custom design",
       "Mobile responsive",
-      "Contact form",
+      "1 contact form",
       "Google Maps integration",
       "Basic SEO setup",
+      "Basic analytics",
+      "FAQ section",
       "Fast-loading, optimized images",
       "Photo gallery",
       "Social media links",
       "Care Plan (1st month included, then $30/mo)",
       "Guaranteed 10 business day turnaround",
     ],
-    cta: { label: "Get Started ($699)", href: "/start?package=tier1" },
+    cta: { label: "Get Started ($349)", href: "/start?package=tier1" },
   },
   {
     id: "tier2",
-    name: "Tier 2: Business Website",
-    price: "$1,299",
-    blurb: "More pages and more polish, for businesses with a bigger story to tell.",
-    highlights: ["Up to 10 pages, custom layouts", "Multiple forms & service pages", "Expanded SEO", "Everything in Tier 1"],
+    name: "Advanced Website",
+    price: "$599",
+    blurb: "Let your website work for your business, with the tools to handle bookings, orders, and integrations.",
+    highlights: [
+      "Up to 10 pages, custom layouts",
+      "Multiple contact forms",
+      "Booking/ordering & integrations",
+      "Everything in Standard",
+    ],
     features: [
       "Up to 10 pages",
       "Custom page layouts",
-      "Multiple forms",
+      "Multiple contact forms",
       "Enhanced animations/interactions",
       "Service area pages",
       "Testimonials & FAQ sections",
+      "Advanced analytics & reporting",
+      "Booking/ordering integration",
+      "Advanced third-party integrations",
       "Expanded SEO (schema, keyword targeting, internal linking)",
-      "Everything in Tier 1",
+      "Everything in Standard",
       "Care Plan (1st month included, then $50/mo)",
     ],
     featured: true,
-    cta: { label: "Get Started ($1,299)", href: "/start?package=tier2" },
+    cta: { label: "Get Started ($599)", href: "/start?package=tier2" },
   },
   {
     id: "tier3",
-    name: "Tier 3: Custom Web Application",
+    name: "Custom Web Application",
     price: "Starting at $2,000",
-    blurb: "Logins, bookings, dashboards, payments: scoped and quoted for what you actually need.",
-    highlights: ["Logins & customer portals", "Bookings tied to inventory", "Dashboards & payment processing", "Quoted to fit your project"],
+    blurb: "Build something unique: logins, dashboards, payments, and e-commerce, scoped and quoted for what you actually need.",
+    highlights: [
+      "Logins & customer portals",
+      "E-commerce & custom systems",
+      "Dashboards & payment processing",
+      "Quoted to fit your project",
+    ],
     features: [
       "Login & customer portals",
       "Content management systems",
       "Admin dashboards",
+      "E-commerce & custom systems",
       "Scheduling tied to inventory",
       "Memberships & order management",
       "Payment processing",
@@ -78,22 +94,43 @@ const tiers = [
   },
 ];
 
+const comparisonRows = [
+  { feature: "One-time", standard: "$349", advanced: "$599", custom: "Custom quote" },
+  { feature: "Care Plan", standard: "$30/mo", advanced: "$50/mo", custom: "Custom" },
+  { feature: "Pages", standard: "Up to 4", advanced: "Up to 10", custom: "Custom" },
+  { feature: "Professional design", standard: true, advanced: true, custom: true },
+  { feature: "Mobile responsive", standard: true, advanced: true, custom: true },
+  { feature: "Basic SEO", standard: true, advanced: true, custom: true },
+  { feature: "Contact forms", standard: "1", advanced: "Multiple", custom: "Custom" },
+  { feature: "FAQ section", standard: true, advanced: true, custom: true },
+  { feature: "Analytics", standard: "Basic", advanced: "Advanced", custom: "Custom" },
+  { feature: "Booking/ordering", standard: false, advanced: true, custom: true },
+  { feature: "Advanced integrations", standard: false, advanced: true, custom: true },
+  { feature: "E-commerce/custom systems", standard: false, advanced: false, custom: true },
+];
+
 const basePlans = [
   {
-    name: "Tier 1 Care Plan",
+    name: "Standard Care Plan",
     price: "$30/mo",
-    features: ["Hosting, backups & SSL", "Security updates", "Uptime monitoring", "Up to 15 min/mo content edits"],
+    features: ["Hosting, SSL & monthly backups", "Security updates", "Uptime monitoring", "Up to 15 min/mo content edits"],
   },
   {
-    name: "Tier 2 Care Plan",
+    name: "Advanced Care Plan",
     price: "$50/mo",
-    features: ["Hosting, backups & SSL", "Security updates", "Uptime monitoring", "Up to 30 min/mo content edits"],
+    features: [
+      "Hosting, SSL & weekly backups",
+      "Priority security updates",
+      "Uptime + integration monitoring",
+      "Upkeep for booking/ordering & other integrations",
+      "Up to 30 min/mo content edits",
+    ],
   },
 ];
 
 const supportPlans = [
-  { name: "Tier 3 Software Support Retainer", detail: "Monitoring, minor fixes, patches (up to 2 hrs/mo)", price: "$100/mo" },
-  { name: "Tier 3 Priority Support", detail: "Up to 5 hrs/mo, faster response", price: "$200/mo" },
+  { name: "Custom Software Support Retainer", detail: "Monitoring, minor fixes, patches (up to 2 hrs/mo)", price: "$100/mo" },
+  { name: "Custom Priority Support", detail: "Up to 5 hrs/mo, faster response", price: "$200/mo" },
   { name: "Extra support hours", detail: "After your plan's included hours are used up", price: "$75/hr" },
 ];
 
@@ -103,18 +140,20 @@ const oneTimeAddOns = [
   { name: "Full CMS setup (client can add their own pages/posts)", price: "$600" },
   { name: "Embedded booking widget (Calendly/Acuity-style embed)", price: "$350" },
   { name: "Custom-styled booking flow (matches site design)", price: "$700" },
-  { name: "Expanded SEO upgrade (bring Tier 1 up to Tier 2 SEO)", price: "$200" },
+  { name: "Expanded SEO upgrade (bring Standard up to Advanced SEO)", price: "$200" },
   { name: "Logo refresh (touch up existing logo)", price: "$150" },
   { name: "Google Business Profile setup", price: "$150" },
   { name: "Rush delivery (faster than standard turnaround)", price: "+25% of project total" },
   { name: "Basic online store (up to 10 products, standard checkout)", price: "$1,800" },
 ];
 
+const oneTimeAddOnsNote = "Booking and advanced integration add-ons require an Advanced or Custom site.";
+
 const buySteps = [
   {
-    step: "Pick a tier",
-    body: "Tier 1 and Tier 2 are fixed price, so no call is required. Add any à la carte extras you want, then reach out and we'll get the intake started.",
-    cta: { label: "See Tier 1 & 2", href: "#tier1" },
+    step: "Pick a plan",
+    body: "Standard and Advanced are fixed price, so no call is required. Add any à la carte extras you want, then reach out and we'll get the intake started.",
+    cta: { label: "See Standard & Advanced", href: "#tier1" },
   },
   {
     step: "Send over the basics",
@@ -125,9 +164,15 @@ const buySteps = [
 
 const customPath = {
   title: "Need something custom instead?",
-  body: "Tier 3 work always starts with a quick call so we can scope it properly before pricing it.",
+  body: "Custom work always starts with a quick call so we can scope it properly before pricing it.",
   cta: { label: "Book a Call", href: "/contact?package=tier3" },
 };
+
+function renderCompareCell(value) {
+  if (value === true) return <span className={styles.compareYes}>&#10003;</span>;
+  if (value === false) return <span className={styles.compareNo}>&mdash;</span>;
+  return value;
+}
 
 export default function Pricing() {
   return (
@@ -139,9 +184,9 @@ export default function Pricing() {
             <span className={styles.heroAccent} aria-hidden="true" />
             <h1 className={styles.heroTitle}>See exactly what your website costs.</h1>
             <p className={styles.heroSubtitle}>
-              You should never have to guess what something costs. Tier 1 and Tier 2 are fixed,
-              named prices, so you can pick a package and get started without a call. Anything
-              genuinely custom gets a quote instead of a guess.
+              You should never have to guess what something costs. Standard and Advanced are
+              fixed, named prices, so you can pick a package and get started without a call.
+              Anything genuinely custom gets a quote instead of a guess.
             </p>
 
             <div className={styles.priceStrip}>
@@ -163,7 +208,7 @@ export default function Pricing() {
       <section className={styles.tiers}>
         <div className="wrapper">
           <div className={styles.sectionHeading}>
-            <h2>Pick the tier that fits your business.</h2>
+            <h2>Pick the plan that fits your business.</h2>
           </div>
 
           <div className={styles.tierGrid}>
@@ -212,6 +257,30 @@ export default function Pricing() {
               </article>
             ))}
           </div>
+
+          <h3 className={`${styles.tableTitle} ${styles.tableTitleSpaced}`}>Compare plans at a glance</h3>
+          <div className={styles.tableWrap}>
+            <table className={`${styles.table} ${styles.compareTable}`}>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Standard</th>
+                  <th>Advanced</th>
+                  <th>Custom</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr key={row.feature}>
+                    <td>{row.feature}</td>
+                    <td>{renderCompareCell(row.standard)}</td>
+                    <td>{renderCompareCell(row.advanced)}</td>
+                    <td>{renderCompareCell(row.custom)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -221,14 +290,16 @@ export default function Pricing() {
             <h2>Peace of mind, not just hosting.</h2>
             <p className={styles.sectionIntro}>
               You focus on running the business; we&apos;ll make sure the website keeps working
-              and stays current. Every Tier 1 or Tier 2 site includes a free first month, then it
-              continues at <strong>$30/mo</strong> (Tier 1) or <strong>$50/mo</strong> (Tier 2):
-              hosting, backups, security updates, monitoring, and a bit of content-edit time every
-              month.
+              and stays current. Every Standard or Advanced site includes a free first month,
+              then it continues at <strong>$30/mo</strong> (Standard) or <strong>$50/mo</strong>{" "}
+              (Advanced). Advanced costs more because there&apos;s more to look after: weekly
+              backups, priority updates, and monitoring for booking/ordering and other
+              integrations, on top of the same hosting, security, and content-edit time as
+              Standard.
             </p>
 
             <Modal
-              triggerLabel="See everything covered, including Tier 3 support →"
+              triggerLabel="See everything covered, including Custom support →"
               triggerClassName={styles.tierDetailsLink}
               title="Care & Support Plans"
             >
@@ -250,7 +321,7 @@ export default function Pricing() {
               </div>
 
               <div className={styles.supportNote}>
-                <h4>Already have a Tier 3 build?</h4>
+                <h4>Already have a Custom build?</h4>
                 <p>
                   A broken booking system or ordering flow is an operational emergency, not a
                   content edit. It&apos;s handled as a separate support retainer, priced
@@ -276,16 +347,17 @@ export default function Pricing() {
       <section className={styles.addOns}>
         <div className="wrapper">
           <div className={styles.sectionHeading}>
-            <h2>Build up from a base tier, à la carte.</h2>
+            <h2>Build up from a base plan, à la carte.</h2>
             <p className={styles.sectionIntro}>
               Every add-on below is a named, fixed price, no ranges. Need something bigger, like a
-              larger store or booking logic tied to inventory? That&apos;s Tier 3 territory, and
+              larger store or booking logic tied to inventory? That&apos;s Custom territory, and
               we&apos;d rather scope it together than force it into a number that doesn&apos;t
               fit.
             </p>
           </div>
 
           <h3 className={styles.tableTitle}>One-Time (Project) Add-Ons</h3>
+          <p className={styles.tableNote}>{oneTimeAddOnsNote}</p>
           <div className={styles.tableWrap}>
             <table className={styles.table}>
               <thead>

@@ -7,21 +7,21 @@ const CONTACT_EMAIL = "tabbystudiosmqt@gmail.com";
 export const metadata = {
   title: "Start Your Project | Tabby Studios",
   description:
-    "Pick Tier 1 or Tier 2, send over the basics, and your build begins. No call required. Tabby Studios will follow up by email to confirm the details and your timeline.",
+    "Pick Standard or Advanced, send over the basics, and your build begins. No call required. Tabby Studios will follow up by email to confirm the details and your timeline.",
 };
 
 const startTiers = [
   {
     key: "tier1",
-    name: "Tier 1: Static Website",
-    price: "$699",
-    blurb: "Up to 5 pages, live in 10 business days.",
+    name: "Standard Website",
+    price: "$349",
+    blurb: "Up to 4 pages, live in 10 business days.",
   },
   {
     key: "tier2",
-    name: "Tier 2: Business Website",
-    price: "$1,299",
-    blurb: "Up to 10 pages, custom layouts.",
+    name: "Advanced Website",
+    price: "$599",
+    blurb: "Up to 10 pages, booking/ordering & integrations.",
   },
 ];
 
@@ -45,8 +45,8 @@ export default async function Start({ searchParams }) {
             <span className={styles.heroAccent} aria-hidden="true" />
             <h1 className={styles.heroTitle}>Start your website.</h1>
             <p className={styles.heroSubtitle}>
-              Tier 1 and Tier 2 are fixed price, so there&apos;s no call required. Rather talk it
-              through first, or need something custom?{" "}
+              Standard and Advanced are fixed price, so there&apos;s no call required. Rather talk
+              it through first, or need something custom?{" "}
               <Link href="/contact">Contact us instead</Link>.
             </p>
             <p className={styles.heroNote}>

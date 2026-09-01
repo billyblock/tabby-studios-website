@@ -53,7 +53,7 @@ const localBusinessJsonLd = {
     addressRegion: "MI",
     addressCountry: "US",
   },
-  priceRange: "$699-$2500+",
+  priceRange: "$349-$2500+",
   founder: {
     "@type": "Person",
     name: "William Block",

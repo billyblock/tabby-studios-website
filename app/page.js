@@ -10,22 +10,22 @@ const essentials = [
 
 const tiers = [
   {
-    name: "Static Website",
-    price: "$699",
-    blurb: "Up to 5 pages, mobile responsive, contact form, basic SEO.",
+    name: "Standard Website",
+    price: "$349",
+    blurb: "Get your business online. Up to 4 pages, mobile responsive, basic SEO & analytics.",
     href: "/pricing#tier1",
   },
   {
-    name: "Business Website",
-    price: "$1,299",
-    blurb: "Up to 10 pages, custom layouts, expanded SEO, testimonials & FAQ.",
+    name: "Advanced Website",
+    price: "$599",
+    blurb: "Let your website work for your business. Up to 10 pages, booking/ordering & integrations, advanced SEO.",
     recommended: true,
     href: "/pricing#tier2",
   },
   {
     name: "Custom Web Application",
     price: "Starting at $2,000",
-    blurb: "Logins, bookings, payments, dashboards: scoped and quoted individually.",
+    blurb: "Build something unique: logins, bookings, payments, e-commerce, scoped and quoted individually.",
     href: "/pricing#tier3",
   },
 ];
@@ -72,8 +72,8 @@ export default function Home() {
           <div className={styles.sectionHeading}>
             <h2>Every business is different. Your website should be priced that way too.</h2>
             <p className={styles.sectionIntro}>
-              Fixed, named prices for Tier 1 &amp; 2. No ranges, no guessing, no call required to
-              buy.
+              Fixed, named prices for Standard &amp; Advanced. No ranges, no guessing, no call
+              required to buy.
             </p>
           </div>
 
