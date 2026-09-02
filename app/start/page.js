@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import Link from "next/link";
 import styles from "../contact/contact.module.css";
+import MoreDetails from "../components/MoreDetails";
 
 const CONTACT_EMAIL = "tabbystudiosmqt@gmail.com";
 
@@ -116,82 +117,79 @@ export default async function Start({ searchParams }) {
               </div>
             </div>
 
-            <details className={styles.moreDetails}>
-              <summary className={styles.moreSummary}>Add more project details (optional)</summary>
-              <div className={styles.moreDetailsBody}>
-                <p className={styles.fieldHint}>
-                  None of this is required to get started, but it helps us move faster if you have
-                  it handy.
-                </p>
+            <MoreDetails summary="Add more project details (optional)">
+              <p className={styles.fieldHint}>
+                None of this is required to get started, but it helps us move faster if you have
+                it handy.
+              </p>
 
-                <div className={styles.grid}>
-                  <div className={styles.field}>
-                    <label htmlFor="business">Business name</label>
-                    <input
-                      id="business"
-                      name="Business"
-                      type="text"
-                      placeholder="Northland Coffee Co."
-                    />
-                  </div>
-
-                  <div className={styles.field}>
-                    <label htmlFor="phone">Phone</label>
-                    <input id="phone" name="Phone" type="tel" placeholder="(906) 555-0100" />
-                  </div>
-                </div>
-
+              <div className={styles.grid}>
                 <div className={styles.field}>
-                  <label htmlFor="domain">Domain name</label>
+                  <label htmlFor="business">Business name</label>
                   <input
-                    id="domain"
-                    name="Domain"
+                    id="business"
+                    name="Business"
                     type="text"
-                    placeholder="northlandcoffee.com, or leave blank if you need one"
+                    placeholder="Northland Coffee Co."
                   />
                 </div>
 
                 <div className={styles.field}>
-                  <label htmlFor="pages">What pages do you need?</label>
-                  <textarea
-                    id="pages"
-                    name="Must-Have Pages"
-                    rows={3}
-                    placeholder="e.g. Home, About, Menu, Contact"
-                  />
-                </div>
-
-                <div className={styles.grid}>
-                  <div className={styles.field}>
-                    <label htmlFor="brand">Logo, brand colors &amp; photos</label>
-                    <select id="brand" name="Brand Assets" defaultValue="Ready to send">
-                      <option>Ready to send</option>
-                      <option>Have some, need guidance</option>
-                      <option>Starting from scratch</option>
-                    </select>
-                  </div>
-
-                  <div className={styles.field}>
-                    <label htmlFor="copy">Website copy/text</label>
-                    <select id="copy" name="Copy Status" defaultValue="Ready to send">
-                      <option>Ready to send</option>
-                      <option>I need help writing it</option>
-                      <option>Not sure yet</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className={styles.field}>
-                  <label htmlFor="notes">Anything else?</label>
-                  <textarea
-                    id="notes"
-                    name="Additional Notes"
-                    rows={4}
-                    placeholder="Timeline to keep in mind, sites you like, anything else worth knowing."
-                  />
+                  <label htmlFor="phone">Phone</label>
+                  <input id="phone" name="Phone" type="tel" placeholder="(906) 555-0100" />
                 </div>
               </div>
-            </details>
+
+              <div className={styles.field}>
+                <label htmlFor="domain">Domain name</label>
+                <input
+                  id="domain"
+                  name="Domain"
+                  type="text"
+                  placeholder="northlandcoffee.com, or leave blank if you need one"
+                />
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="pages">What pages do you need?</label>
+                <textarea
+                  id="pages"
+                  name="Must-Have Pages"
+                  rows={3}
+                  placeholder="e.g. Home, About, Menu, Contact"
+                />
+              </div>
+
+              <div className={styles.grid}>
+                <div className={styles.field}>
+                  <label htmlFor="brand">Logo, brand colors &amp; photos</label>
+                  <select id="brand" name="Brand Assets" defaultValue="Ready to send">
+                    <option>Ready to send</option>
+                    <option>Have some, need guidance</option>
+                    <option>Starting from scratch</option>
+                  </select>
+                </div>
+
+                <div className={styles.field}>
+                  <label htmlFor="copy">Website copy/text</label>
+                  <select id="copy" name="Copy Status" defaultValue="Ready to send">
+                    <option>Ready to send</option>
+                    <option>I need help writing it</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="notes">Anything else?</label>
+                <textarea
+                  id="notes"
+                  name="Additional Notes"
+                  rows={4}
+                  placeholder="Timeline to keep in mind, sites you like, anything else worth knowing."
+                />
+              </div>
+            </MoreDetails>
 
             <div className={styles.actions}>
               <button type="submit" className={styles.submitButton}>
