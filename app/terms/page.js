@@ -53,10 +53,11 @@ export default function Terms() {
 
             <h2>Revisions</h2>
             <p>
-              Reasonable revisions during the build (refining layout, copy placement, or design
-              details within the agreed scope) are included. Requests that go beyond the original
-              scope (new pages, new features, a different design direction after approval) are
-              treated as new work and quoted separately.
+              Standard includes 1 round of revisions and Advanced includes 3 (refining layout,
+              copy placement, or design details within the agreed scope); Custom revision rounds
+              are set when the project is scoped. Requests that go beyond the original scope (new
+              pages, new features, a different design direction after approval) are treated as new
+              work and quoted separately.
             </p>
 
             <h2>Ownership</h2>
