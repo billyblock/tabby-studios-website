@@ -27,7 +27,7 @@ const categories = [
       },
       {
         q: "What if my project is bigger than Standard or Advanced?",
-        a: "That's a Custom Web Application. Anything with a database enters the picture here: logins, customer portals, e-commerce, booking systems tied to inventory, dashboards, memberships, payment processing, or API integrations. These are genuinely different from project to project, so they're scoped and quoted individually starting at $2,000 rather than forced into a flat number.",
+        a: "That's a Custom Web Application. Anything with a database enters the picture here: logins, customer portals, e-commerce, booking systems tied to inventory, dashboards, memberships, payment processing, or API integrations. These are genuinely different from project to project, so they're scoped and quoted individually rather than forced into a flat number.",
       },
     ],
   },

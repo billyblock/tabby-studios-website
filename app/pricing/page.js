@@ -73,7 +73,7 @@ const tiers = [
   {
     id: "tier3",
     name: "Custom Web Application",
-    price: "Starting at $2,000",
+    price: "Custom quote",
     blurb: "Build something unique: logins, dashboards, payments, and e-commerce, scoped and quoted for what you actually need.",
     highlights: [
       "Logins & customer portals",

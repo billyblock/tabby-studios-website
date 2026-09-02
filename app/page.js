@@ -24,7 +24,7 @@ const tiers = [
   },
   {
     name: "Custom Web Application",
-    price: "Starting at $2,000",
+    price: "Custom quote",
     blurb: "Build something unique: logins, bookings, payments, e-commerce, scoped and quoted individually.",
     href: "/pricing#tier3",
   },
