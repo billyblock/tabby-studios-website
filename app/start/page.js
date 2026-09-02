@@ -196,8 +196,8 @@ export default async function Start({ searchParams }) {
                 Start My Project
               </button>
               <p className={styles.noPaymentNote}>
-                No card, no payment — this just gets the conversation started. We&apos;ll follow up
-                by email before anything&apos;s billed.
+                No card, no payment. This just gets the conversation started, and
+                we&apos;ll follow up by email before anything&apos;s billed.
               </p>
               <p className={styles.fallback}>
                 Prefer email? Reach us directly at{" "}
