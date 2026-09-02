@@ -192,6 +192,10 @@ export default async function Start({ searchParams }) {
             </MoreDetails>
 
             <div className={styles.actions}>
+              <p className={styles.noPaymentNote}>
+                No payment due now — this just tells us you&apos;re interested. We&apos;ll follow up
+                by email before anything is billed.
+              </p>
               <button type="submit" className={styles.submitButton}>
                 Start My Project
               </button>

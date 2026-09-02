@@ -234,6 +234,28 @@
   gap: 0.9rem;
 }
 
+.noPaymentNote {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-btn);
+  background: var(--marmalade-soft);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.noPaymentNote::before {
+  content: "";
+  flex-shrink: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--clay);
+}
+
 .submitButton {
   display: inline-flex;
   align-items: center;
